@@ -7,6 +7,8 @@
 // import { Skeleton } from "@mui/material";
 
 import FormComponent from "./components/form";
+import LoginComponent from "./components/login";
+import RegisterComponent from "./components/register";
 
 
 
@@ -64,9 +66,15 @@ function App() {
   // if(loading)return <Skeleton variant="rectangular" width={650} height={650}/>
 
   return (
+    
     <div style={{display:'flex', justifyContent:'center'}}>
-      <h2>React js Concepts 2024</h2>
-      <FormComponent/>
+      
+     
+      {/* <FormComponent/> */}
+      <div style={{display:'flex', gap:'20px',justifyContent:'normal'}}>
+      <LoginComponent/>
+      <RegisterComponent/>
+      </div>
     </div>
     // <div className={classes.mainWrapper}>
     //   <h1 className={classes.headerTitle}>
