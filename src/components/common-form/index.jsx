@@ -21,7 +21,7 @@ const CommonForm = ({ formControls = [], formData, setFormData ,buttonText,onHan
             placeholder={getCurrentElement.placeholder}
             value={formData[getCurrentElement.name]}
             onChange={(event) => setFormData({
-              ...FormData,
+              ...formData,
               [event.target.name]: event.target.value
             })}
           />
@@ -39,7 +39,7 @@ const CommonForm = ({ formControls = [], formData, setFormData ,buttonText,onHan
             placeholder={getCurrentElement.placeholder}
             value={formData[getCurrentElement.name]}
             onChange={(event) => setFormData({
-              ...FormData,
+              ...formData,
               [event.target.name]: event.target.value
             })}
           />
