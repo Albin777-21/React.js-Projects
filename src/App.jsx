@@ -11,6 +11,7 @@ import RecipesList from "./pages/recipes";
 import CommentList from "./pages/comments";
 import RecipeDetils from "./pages/recipe-details";
 import NotFoundPage from "./pages/not-found";
+import ReactHookPage from "./pages/react-hook-form";
 
 // import FormComponent from "./components/form";
 // import LoginComponent from "./components/login";
@@ -78,6 +79,7 @@ function App() {
       
     <button  onClick={()=>navigate('/recipe-list')} style={{backgroundColor:'black', color:'white'}}>Navigate to RecipeList Page</button>
     <button onClick={()=>navigate('/comment-list')} style={{backgroundColor:'black', color:'white'}}>Navigate to CommentList Page</button>
+    <button onClick={()=>navigate('/react-hook')}>React form</button>
     <div>
         <Link to={'/recipe-list'}>navigate</Link>
       </div>
@@ -86,6 +88,7 @@ function App() {
         <Route path="/recipe-list" element={<RecipesList/>}/>
         <Route path="/comment-list" element={<CommentList/>}/>
         <Route path="/recipe-list/:id" element={<RecipeDetils/>}/>
+        <Route path='/react-hook' element={<ReactHookPage/>}/>
         <Route path="*" element={<NotFoundPage/>}/>
       </Routes>
      
