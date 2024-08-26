@@ -7,7 +7,7 @@ const formTypes = {
 };
 
 const CommonForm = ({ formControls = [], formData, setFormData ,buttonText,onHandleSubmit}) => {
-  function renderFromElements(getCurrentElement) {
+  function renderFormElements(getCurrentElement) {
     let content = null;
 
     switch (getCurrentElement?.componentType) {
@@ -52,7 +52,7 @@ const CommonForm = ({ formControls = [], formData, setFormData ,buttonText,onHan
     <form onSubmit={onHandleSubmit}>
       {formControls?.length
         ? formControls.map((singleFormElement) =>
-            renderFromElements(singleFormElement)
+            renderFormElements(singleFormElement)
           )
         : null}
         <div style={{marginTop:'10px'}}>
