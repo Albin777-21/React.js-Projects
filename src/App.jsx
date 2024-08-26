@@ -1,3 +1,5 @@
+
+
 // import { useEffect, useState } from "react";
 // import classes from "./styles.module.css";
 // import TodoItem from './components/todo-item'
@@ -9,11 +11,12 @@ import RecipesList from "./pages/recipes";
 import CommentList from "./pages/comments";
 import RecipeDetils from "./pages/recipe-details";
 import NotFoundPage from "./pages/not-found";
-import Layout from "./components/layout";
 
 // import FormComponent from "./components/form";
 // import LoginComponent from "./components/login";
 // import RegisterComponent from "./components/register";
+
+
 
 function App() {
   // const [loading, setLoading] = useState(false);
@@ -53,13 +56,13 @@ function App() {
   //       setTodoDetails(null)
   //       setOpenDialog(false)
   //     }
-
+      
   //   } catch (error) {
   //     console.log(error);
   //     setErrorMsg('Some Errors')
-
+      
   //   }
-
+    
   // }
 
   // useEffect(() => {
@@ -67,35 +70,25 @@ function App() {
   // }, []);
 
   // if(loading)return <Skeleton variant="rectangular" width={650} height={650}/>
-  const navigate = useNavigate();
+  const navigate=useNavigate()
 
   return (
-    <div style={{ alignItems: "center" }}>
-      <button
-        onClick={() => navigate("/recipe-list")}
-        style={{ backgroundColor: "black", color: "white" }}
-      >
-        Navigate to RecipeList Page
-      </button>
-      <button
-        onClick={() => navigate("/comment-list")}
-        style={{ backgroundColor: "black", color: "white" }}
-      >
-        Navigate to CommentList Page
-      </button>
-      <div>
-        <Link to={"/recipe-list"}>navigate</Link>
+    
+    <div style={{alignItems:'center'}}>
+      
+    <button  onClick={()=>navigate('/recipe-list')} style={{backgroundColor:'black', color:'white'}}>Navigate to RecipeList Page</button>
+    <button onClick={()=>navigate('/comment-list')} style={{backgroundColor:'black', color:'white'}}>Navigate to CommentList Page</button>
+    <div>
+        <Link to={'/recipe-list'}>navigate</Link>
       </div>
       <Routes>
-        <Route path="/home" element={<Layout />}>
-          <Route path="recipe-list" element={<RecipesList />} />
-          <Route path="comment-list" element={<CommentList />} />
-          <Route path="recipe-list/:id" element={<RecipeDetils />} />
-        </Route>
-
-        <Route path="*" element={<NotFoundPage />} />
+        
+        <Route path="/recipe-list" element={<RecipesList/>}/>
+        <Route path="/comment-list" element={<CommentList/>}/>
+        <Route path="/recipe-list/:id" element={<RecipeDetils/>}/>
+        <Route path="*" element={<NotFoundPage/>}/>
       </Routes>
-
+     
       {/* <FormComponent/> */}
       {/* "<div style={{display:'flex', gap:'20px',justifyContent:'normal'}}>
       <LoginComponent/>
