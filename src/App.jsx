@@ -12,6 +12,7 @@ import CommentList from "./pages/comments";
 import RecipeDetils from "./pages/recipe-details";
 import NotFoundPage from "./pages/not-found";
 import ReactHookPage from "./pages/react-hook-form";
+import Hooks from "./pages/hooks";
 
 // import FormComponent from "./components/form";
 // import LoginComponent from "./components/login";
@@ -89,6 +90,7 @@ function App() {
         <Route path="/comment-list" element={<CommentList/>}/>
         <Route path="/recipe-list/:id" element={<RecipeDetils/>}/>
         <Route path='/react-hook' element={<ReactHookPage/>}/>
+        <Route path="/hooks" element={<Hooks/>}/>
         <Route path="*" element={<NotFoundPage/>}/>
       </Routes>
      
