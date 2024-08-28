@@ -1,5 +1,3 @@
-
-
 // import { useEffect, useState } from "react";
 // import classes from "./styles.module.css";
 // import TodoItem from './components/todo-item'
@@ -13,12 +11,11 @@ import RecipeDetils from "./pages/recipe-details";
 import NotFoundPage from "./pages/not-found";
 import ReactHookPage from "./pages/react-hook-form";
 import Hooks from "./pages/hooks";
+import ReactQueryDemo from "./pages/react-query";
 
 // import FormComponent from "./components/form";
 // import LoginComponent from "./components/login";
 // import RegisterComponent from "./components/register";
-
-
 
 function App() {
   // const [loading, setLoading] = useState(false);
@@ -58,13 +55,13 @@ function App() {
   //       setTodoDetails(null)
   //       setOpenDialog(false)
   //     }
-      
+
   //   } catch (error) {
   //     console.log(error);
   //     setErrorMsg('Some Errors')
-      
+
   //   }
-    
+
   // }
 
   // useEffect(() => {
@@ -72,28 +69,37 @@ function App() {
   // }, []);
 
   // if(loading)return <Skeleton variant="rectangular" width={650} height={650}/>
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   return (
-    
-    <div style={{alignItems:'center'}}>
-      
-    <button  onClick={()=>navigate('/recipe-list')} style={{backgroundColor:'black', color:'white'}}>Navigate to RecipeList Page</button>
-    <button onClick={()=>navigate('/comment-list')} style={{backgroundColor:'black', color:'white'}}>Navigate to CommentList Page</button>
-    <button onClick={()=>navigate('/react-hook')}>React form</button>
-    <div>
-        <Link to={'/recipe-list'}>navigate</Link>
+    <div style={{ alignItems: "center" }}>
+      <button
+        onClick={() => navigate("/recipe-list")}
+        style={{ backgroundColor: "black", color: "white" }}
+      >
+        Navigate to RecipeList Page
+      </button>
+      <button
+        onClick={() => navigate("/comment-list")}
+        style={{ backgroundColor: "black", color: "white" }}
+      >
+        Navigate to CommentList Page
+      </button>
+      <button onClick={() => navigate("/react-hook")}>React form</button>
+      <div>
+        <Link to={"/recipe-list"}>navigate</Link>
       </div>
       <Routes>
-        
-        <Route path="/recipe-list" element={<RecipesList/>}/>
-        <Route path="/comment-list" element={<CommentList/>}/>
-        <Route path="/recipe-list/:id" element={<RecipeDetils/>}/>
-        <Route path='/react-hook' element={<ReactHookPage/>}/>
-        <Route path="/hooks" element={<Hooks/>}/>
-        <Route path="*" element={<NotFoundPage/>}/>
+        <Route path="/recipe-list" element={<RecipesList />} />
+        <Route path="/react-query" element={<ReactQueryDemo />} />
+
+        <Route path="/comment-list" element={<CommentList />} />
+        <Route path="/recipe-list/:id" element={<RecipeDetils />} />
+        <Route path="/react-hook" element={<ReactHookPage />} />
+        <Route path="/hooks" element={<Hooks />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
-     
+
       {/* <FormComponent/> */}
       {/* "<div style={{display:'flex', gap:'20px',justifyContent:'normal'}}>
       <LoginComponent/>
